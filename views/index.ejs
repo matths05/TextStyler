@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>TextStyler</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div id="form-container">
+        <h1>TextStyler</h1>
+        <form action="/translate" method="POST">
+            <div class="form-field" id="input-field">
+                <input
+                    type="text"
+                    class="text-input"
+                    placeholder="Enter your text"
+                    onfocus="addBoxShadow('input-field')"
+                    onblur="removeBoxShadow('input-field')"
+                />
+            </div>
+            <p>Choose style:</p>
+            <select name="style" id="style">
+            </select>
+            <br>
+            <input type="submit" id="submit-button" value="Translate!"/>
+        </form>
+    </div>
+    <script>
+        function addBoxShadow(id) {
+            const element = document.getElementById(id);
+            element.style.boxShadow = "0px 0px 10px 1.5px rgba(0, 0, 0, 0.1)";
+        }
+
+        function removeBoxShadow(id) {
+            const element = document.getElementById(id);
+            element.style.boxShadow = "";
+        }
+    </script>
+</body>
+
+</html>
